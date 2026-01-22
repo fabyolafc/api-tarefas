@@ -2,8 +2,6 @@ const express = require('express');
 const tarefas = require('./tarefasRoute.js');
 
 module.exports = (app) => {
-    app.use(express.json());
-
     // Rota inicial - apresentação do projeto
     app.get('/', (req, res) => {
         res.status(200).json({
