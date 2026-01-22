@@ -38,8 +38,8 @@ const options = {
             },
             status: {
               type: 'string',
-              enum: ['pendente', 'em_progresso', 'concluída'],
-              description: 'Status da tarefa'
+              description: 'Status da tarefa',
+              enum: ['pendente', 'em_progresso', 'concluída']
             },
             createdAt: {
               type: 'string',

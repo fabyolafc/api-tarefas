@@ -1,8 +1,7 @@
-const {Router} = require('express');
+const { Router } = require('express');
 const tarefasController = require('../controllers/TarefaController.js');
 
 const tarefaController = new tarefasController();
-
 const router = Router();
 
 /**
@@ -82,8 +81,11 @@ router.get('/tarefas/:id', (req, res) => tarefaController.pegaUmPorId(req, res))
  *                 description: Descrição da tarefa
  *               status:
  *                 type: string
- *                 enum: ['pendente', 'em_progresso', 'concluída']
- *                 description: Status inicial da tarefa (padrão: pendente)
+ *                 enum:
+ *                   - pendente
+ *                   - em_progresso
+ *                   - concluida
+ *                 description: Status inicial da tarefa
  *     responses:
  *       201:
  *         description: Tarefa criada com sucesso
@@ -131,7 +133,10 @@ router.post('/tarefas', (req, res) => tarefaController.criaNovo(req, res));
  *                 description: Nova descrição da tarefa
  *               status:
  *                 type: string
- *                 enum: ['pendente', 'em_progresso', 'concluída']
+ *                 enum:
+ *                   - pendente
+ *                   - em_progresso
+ *                   - concluida
  *                 description: Novo status da tarefa
  *     responses:
  *       200:
@@ -175,7 +180,10 @@ router.put('/tarefas/:id', (req, res) => tarefaController.atualiza(req, res));
  *             properties:
  *               status:
  *                 type: string
- *                 enum: ['pendente', 'em_progresso', 'concluída']
+ *                 enum:
+ *                   - pendente
+ *                   - em_progresso
+ *                   - concluida
  *                 description: Novo status da tarefa
  *     responses:
  *       200:
