@@ -7,7 +7,11 @@ const swaggerSpec = require('./config/swagger');
 const app = express();
 
 // Configurar CORS
-app.use(cors());
+app.use(cors({
+    origin: "https://dev-taskss.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
+}));
 
 // Middleware para JSON
 app.use(express.json());
